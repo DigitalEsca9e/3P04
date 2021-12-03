@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Sakadia
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+        <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+        <script>
+            /*function addPage(){
+                var a=document.createElement("div");
+                var n=document.getElementsByClassName("page").length+1;
+                var b=document.getElementById("web_pages");
+                var local=document.getElementById("page_cycle");
+                var pg_btn=document.createElement("button");
+                a.id="page_"+n;
+                a.className="page";
+                b.appendChild(a);
+                //showPage(a.id);
+                definePage(a.id);
+                pg_btn.className="pageBtn";
+                pg_btn.id="btn_"+n;
+                pg_btn.textContent="THis is page" +n;
+                pg_btn.onclick=function(){showPage(a.id)};
+
+                
+                pg_btn.textContent=n;
+                local.appendChild(pg_btn);
+            }
+            function definePage(divNode){
+                var page=document.getElementById(divNode);
+                var soundButton=document.createElement("button");
+                var imageButton=document.createElement("button");
+                var textAreaButton=document.createElement("button");
+                var HeadingButton=document.createElement("button");
+                var backgroundImageButton=document.createElement("button");
+                soundButton.className="addElementButton";
+                imageButton.className="addElementButton";
+                textAreaButton.className="addElementButton";
+                HeadingButton.className="addElementButton";
+                backgroundImageButton.className="addElementButton";
+                soundButton.textContent="Add sound";
+                imageButton.textContent="Add Image";
+                textAreaButton.textContent="Add text";
+                HeadingButton.textContent="Add a heading";
+                backgroundImageButton.textContent="Change background image";
+                backgroundImageButton.onclick=function(){cbgImage(divNode)};
+                page.appendChild(soundButton);
+                page.appendChild(imageButton);
+                page.appendChild(textAreaButton);
+                page.appendChild(HeadingButton);
+                page.appendChild(backgroundImageButton);
+            }
+
+            function cbgImage(divNode){
+                var page=document.getElementById(divNode);
+                var cycle=page.getElementsByClassName("addElementButton");
+                console.log(cycle.length);
+                for(var i=0; i<cycle.length;i++){
+                    cycle[i].hidden=true;
+                }
+                var inp=document.createElement("input");
+                inp.id="file_selector";
+                inp.type="file";
+                inp.title="BG IMAGE";
+                inp.onchange=function(event){
+                    var urli=URL.createObjectURL(event.target.files[0]);
+                    page.style.background="url("+urli+")";
+                    page.style.backgroundRepeat="no-repeat";
+                    page.style.backgroundSize="cover";
+                    for(var i=0; i<cycle.length;i++){
+                        cycle[i].hidden=false;
+                    }
+                    document.getElementById("file_selector").remove();
+                    document.getElementById("file_submitter").remove();
+                };
+                page.appendChild(inp);
+
+            }*/
+
+            function showPage(pageId){
+                var a=document.getElementsByClassName("page");
+                if(a.length>0){
+                    for(var i=0; i<a.length;i++){
+                        a[i].hidden=true;
+                    }
+                    document.getElementById(pageId).hidden=false;
+                }
+                else{
+                    return;
+                }
+            }
+            /*function numbering(){
+                var n_pages= document.getElementsByClassName("pageBtn").length;
+                console.log(n_pages);
+                var pages=document.getElementsByClassName("pagBtn");
+                var local=document.getElementById("page_cycle");
+                for(var i=0; i<n_pages; i++){
+                    var j=i+1;
+                    var pg_asn="page_"+j;
+                    pages[i].addEventListener("click", function() {
+                    showPage(pg_asn);
+                    });
+                }
+            }*/
+        </script>
+        <style>
+            body{
+                margin:auto;
+                background-color: rgb(172, 120, 43);
+            }
+            #perma_banner{
+                background-color: black;
+                color: white;
+                font-family: 'Megrim', cursive;
+                overflow: auto;
+                height:10vh;
+                
+            }
+            #perma_banner h1{
+                margin-left: 2%;
+                letter-spacing: 10px;
+                position: relative;
+                top: 10%;
+            }
+            .page{
+                height:85vh;
+                width: 100vw;
+                background: url("./Assets/bg.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .addElementButton{
+                text-align: center;
+            }
+            #map_holder{
+                max-height: 50rem;
+                width: 50rem;
+                float: left;
+            }
+            #sakadia_map{
+                width: 100%;
+                height: auto;
+                margin-top: 2%;
+                margin-left: 10%;
+            }
+            #intro_text{
+                text-align: left;
+                color: white;
+                float: right;
+                max-height: 50rem;
+                width: 35rem;
+                margin-right: 10%;
+            }
+            #page_cycle{
+                height: 5vh;
+                display: flex;
+                flex-direction: row;
+                background-color: black;
+                margin-bottom: 0px;
+                align-items: center;
+                justify-content: center;
+            }
+            .page_btn{
+                background-color: transparent;
+                color: white;
+                border: none;
+                font-size: 16px;
+            }
+            .page_btn:hover{
+                border-radius:  5px;
+                border-color: transparent;
+                background-color: white;
+                color: black;
+            }
+            .audio_file{
+                float: right;
+                margin-top: 5rem;
+                margin-right: 10rem;
+            }
+        </style>
+    </head>
+    <body onload="showPage('page_1')">
+        <div id="main">
+            <!--<div id="options">
+                <button id="add" type="button" onclick="addPage()">Add Page</button>
+                <button id="delete" type="button">Delete</button>
+            </div>-->
+            <div id="perma_banner">
+                <h1>S  A  K  A  D  I  A</h1>
+            </div>
+            <div id="web_pages">
+                <div class="page" id="page_1">
+                    <div id="map_holder">
+                        <img id="sakadia_map" class="img_elements" src="./Assets/SakadiaMap.png"/>
+                    </div>
+                    <div id="intro_text">
+                        <h1 class="heading">Intro</h1>
+                        <div class="paragraphs">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate pellentesque ullamcorper. Mauris quis egestas sapien. Nam vulputate turpis velit, ac dapibus nunc fringilla in. Phasellus posuere justo ac metus facilisis, quis fringilla magna mattis. Sed et sodales risus, in vehicula ex. Donec nec porttitor nulla. Cras convallis est vitae ligula consequat, non lobortis nibh dignissim.
+
+                            Proin ut lacus facilisis, dapibus nunc vitae, ullamcorper massa. Vivamus pretium augue ac ex laoreet, non feugiat ipsum faucibus. Phasellus quis rutrum massa. Integer fermentum ut arcu sit amet interdum. Proin sagittis fringilla quam eget eleifend. Fusce fermentum, magna et elementum venenatis, ligula elit hendrerit tortor, eu maximus lorem est id magna. Donec augue magna, vehicula in iaculis sit amet, suscipit ut ipsum.
+
+                            Curabitur lacinia rhoncus tempor. Aliquam sed fringilla magna, vitae interdum mi. Integer porttitor metus in augue vehicula, nec cursus elit malesuada. Morbi ac nibh sit amet enim finibus sagittis et a lacus. Suspendisse et diam arcu. Pellentesque hendrerit suscipit elit, interdum iaculis neque fringilla ornare. Aenean a semper felis. Suspendisse id ligula in massa accumsan dictum at in enim. Nullam et facilisis lectus. Nullam mollis non massa non sodales. Quisque a risus risus. Nullam id interdum mi, at consequat nisi.
+
+                            Praesent urna metus, luctus ut mauris sed, aliquet finibus justo. Praesent quam arcu, pulvinar sit amet ex sit amet, malesuada condimentum nisl. Suspendisse tincidunt ex et mattis dictum. Quisque at placerat est. Cras ac tortor eros. Vestibulum libero lorem, luctus id urna ac, maximus varius ante. Donec hendrerit vestibulum eros at pharetra. Aliquam ligula tortor, fermentum eget dictum quis, accumsan ut nibh. Donec eget tempus nibh. Vivamus eu velit sodales, porta odio id, pulvinar nisl. Mauris id facilisis lacus. Morbi nec sodales ligula. Vestibulum a maximus nunc. Mauris tristique augue id tempus porttitor.
+
+                            Aenean bibendum turpis accumsan ligula facilisis ornare. Ut sit amet auctor velit. Etiam at quam nisl. Maecenas augue lectus, facilisis sit amet dapibus vel, feugiat non sem. Nullam ac posuere ex. Nunc blandit semper auctor. Vivamus auctor faucibus pharetra.
+                        </div>   
+                    </div>
+                    <div class="audio_file">
+                        <audio controls>
+                            <source src="Assets/sound1.mp3" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+                <div class="page" id="page_2">
+
+                </div>
+                <div class="page" id="page_3">
+
+                </div>
+                <div id="page_cycle">
+                    <button class="page_btn" type="button" onclick="showPage('page_1')">1</button>
+                    <button class="page_btn" type="button" onclick="showPage('page_2')">2</button>
+                    <button class="page_btn" type="button" onclick="showPage('page_3')">3</button>
+                </div>
+            </div>
+            <audio src="Assets/One piece Episode 1000.mp4"></audio>
+            
+        </div>
+    </body>
+</html>
