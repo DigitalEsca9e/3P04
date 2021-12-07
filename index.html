@@ -108,14 +108,14 @@
         <style>
             body{
                 margin:auto;
-                background-color: rgb(172, 120, 43);
+                background-color: rgb(0, 0, 0);
             }
             #perma_banner{
                 background-color: black;
                 color: white;
                 font-family: 'Megrim', cursive;
                 overflow: auto;
-                height:10vh;
+                width: 100vw;
                 
             }
             #perma_banner h1{
@@ -124,37 +124,43 @@
                 position: relative;
                 top: 10%;
             }
-            .page{
-                height:85vh;
-                width: 100vw;
-                background: url("./Assets/bg.svg");
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
             .addElementButton{
                 text-align: center;
             }
+            .page_content{
+                overflow: auto;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
             #map_holder{
-                max-height: 50rem;
-                width: 50rem;
+                height: auto;
+                width: 100vw;
                 float: left;
             }
             #sakadia_map{
                 width: 100%;
                 height: auto;
-                margin-top: 2%;
-                margin-left: 10%;
             }
             #intro_text{
                 text-align: left;
                 color: white;
                 float: right;
-                max-height: 50rem;
-                width: 35rem;
-                margin-right: 10%;
+                width:100vw;
+                background: linear-gradient(black,rgb(73, 73, 73));
+            }
+            .heading{
+                margin-left: 4rem;
+            }
+            .paragraphs{
+                margin-left: 4rem;
+                margin-right: 4rem;
             }
             #page_cycle{
-                height: 5vh;
+                width: 100vw;
+                height: 2rem;
                 display: flex;
                 flex-direction: row;
                 background-color: black;
@@ -174,11 +180,7 @@
                 background-color: white;
                 color: black;
             }
-            .audio_file{
-                float: right;
-                margin-top: 5rem;
-                margin-right: 10rem;
-            }
+            
         </style>
     </head>
     <body onload="showPage('page_1')">
@@ -192,6 +194,7 @@
             </div>
             <div id="web_pages">
                 <div class="page" id="page_1">
+                    <div class="page_content"> 
                     <div id="map_holder">
                         <img id="sakadia_map" class="img_elements" src="./Assets/SakadiaMap.png"/>
                     </div>
@@ -215,6 +218,7 @@
                             Your browser does not support the audio element.
                         </audio>
                     </div>
+                    </div>
                 </div>
                 <div class="page" id="page_2">
                     <div>
@@ -226,13 +230,42 @@
                         Third page
                     </div>
                 </div>
+                <div class="page" id="page_4">
+                    <div>
+                        Third page
+                    </div>
+                </div>
+                <div class="page" id="page_5">
+                    <div>
+                        Third page
+                    </div>
+                </div>
+                <div class="page" id="page_6">
+                    <div>
+                        Third page
+                    </div>
+                </div>
+                <div class="page" id="page_7">
+                    <div>
+                        Third page
+                    </div>
+                </div>
+                <div class="page" id="page_8">
+                    <div>
+                        Third page
+                    </div>
+                </div>
                 <div id="page_cycle">
                     <button class="page_btn" type="button" onclick="showPage('page_1')">1</button>
                     <button class="page_btn" type="button" onclick="showPage('page_2')">2</button>
                     <button class="page_btn" type="button" onclick="showPage('page_3')">3</button>
+                    <button class="page_btn" type="button" onclick="showPage('page_4')">4</button>
+                    <button class="page_btn" type="button" onclick="showPage('page_5')">5</button>
+                    <button class="page_btn" type="button" onclick="showPage('page_6')">6</button>
+                    <button class="page_btn" type="button" onclick="showPage('page_7')">7</button>
+                    <button class="page_btn" type="button" onclick="showPage('page_8')">8</button>
                 </div>
             </div>
-            <audio src="Assets/One piece Episode 1000.mp4"></audio>
             
         </div>
     </body>
