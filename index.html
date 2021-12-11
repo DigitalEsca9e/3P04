@@ -138,12 +138,19 @@
                 align-items: center;
             }
             
-            #map_holder{
+            .img_holder{
                 height: auto;
                 width: 100vw;
-                float: left;
             }
             #sakadia_map{
+                width: 100%;
+                height: auto;
+            }
+            #chitora_post{
+                width: 100%;
+                height: auto;
+            }
+            #firebright_img{
                 width: 100%;
                 height: auto;
             }
@@ -200,7 +207,7 @@
             <div id="web_pages">
                 <div class="page" id="page_1">
                     <div class="page_content"> 
-                        <div id="map_holder">
+                        <div class="img_holder">
                             <img id="sakadia_map" class="img_elements" src="./Assets/SakadiaMap.png"/>
                         </div>
                         <div id="intro_text">
@@ -242,7 +249,9 @@
                 </div>
                 <div class="page" id="page_3">
                     <div class="page_content"> 
-                        
+                        <div class="img_holder">
+                            <img id="chitora_post" class="img_elements" src="./Assets/Chitora_city_img.png"/>
+                        </div>
                         <div id="intro_text">
                             <div class="audio_file">
                                 <audio controls>
@@ -264,7 +273,9 @@
                 </div>
                 <div class="page" id="page_4">
                     <div class="page_content"> 
-                        
+                        <div class="img_holder">
+                            <img id="firebright_img" class="img_elements" src="./Assets/FireBrightLoft_img.png"/>
+                        </div>
                         <div id="intro_text">
                             <div class="audio_file">
                                 <audio controls>
@@ -322,9 +333,9 @@
                     <button class="page_btn" type="button" onclick="showPage('page_3')">3</button>
                     <button class="page_btn" type="button" onclick="showPage('page_4')">4</button>
                     <button class="page_btn" type="button" onclick="showPage('page_5')">5</button>
-                    <button class="page_btn" type="button" onclick="showPage('page_6')">6</button>
+                    <!--<button class="page_btn" type="button" onclick="showPage('page_6')">6</button>
                     <button class="page_btn" type="button" onclick="showPage('page_7')">7</button>
-                    <button class="page_btn" type="button" onclick="showPage('page_8')">8</button>
+                    <button class="page_btn" type="button" onclick="showPage('page_8')">8</button>-->
                 </div>
             </div>
             
